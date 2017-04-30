@@ -1,0 +1,11 @@
+﻿@model List<MvcTutorials.Data.Entities.Employee>
+@{
+    ViewBag.Title = "Employees";
+}
+<h2>List Employees</h2>
+@{
+    foreach (var employee in Model)
+    {
+        <div>@employee.Id : @employee.Name</div>
+    }
+}
