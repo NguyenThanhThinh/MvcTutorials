@@ -192,13 +192,17 @@
     <Compile Include="Controllers\ActionResultExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RazorController.cs" />
     <Compile Include="Data\Entities\Category.cs" />
     <Compile Include="Data\Entities\Employee.cs" />
+    <Compile Include="Data\Entities\Human.cs" />
+    <Compile Include="Data\Entities\Person.cs" />
     <Compile Include="Data\Entities\Product.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HtmlExtentions.cs" />
     <Compile Include="Migrations\201704300421089_adddatabase.cs" />
     <Compile Include="Migrations\201704300421089_adddatabase.Designer.cs">
       <DependentUpon>201704300421089_adddatabase.cs</DependentUpon>
@@ -271,6 +275,10 @@
     <Content Include="Views\ActionResultExample\Index.cshtml" />
     <Content Include="Views\ActionResultExample\List.cshtml" />
     <Content Include="Views\ActionResultExample\_MenuPartial.cshtml" />
+    <Content Include="Views\Razor\Images.cshtml" />
+    <Content Include="Views\Razor\Index.cshtml" />
+    <Content Include="Views\Razor\Table.cshtml" />
+    <Content Include="Views\Razor\Videos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
