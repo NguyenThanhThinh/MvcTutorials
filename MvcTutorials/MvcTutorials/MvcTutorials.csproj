@@ -192,10 +192,12 @@
     <Compile Include="Controllers\ActionResultExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MouseController.cs" />
     <Compile Include="Controllers\RazorController.cs" />
     <Compile Include="Data\Entities\Category.cs" />
     <Compile Include="Data\Entities\Employee.cs" />
     <Compile Include="Data\Entities\Human.cs" />
+    <Compile Include="Data\Entities\Mouse.cs" />
     <Compile Include="Data\Entities\Person.cs" />
     <Compile Include="Data\Entities\Product.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
@@ -206,6 +208,10 @@
     <Compile Include="Migrations\201704300421089_adddatabase.cs" />
     <Compile Include="Migrations\201704300421089_adddatabase.Designer.cs">
       <DependentUpon>201704300421089_adddatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705101609427_addMouse.cs" />
+    <Compile Include="Migrations\201705101609427_addMouse.Designer.cs">
+      <DependentUpon>201705101609427_addMouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -279,6 +285,7 @@
     <Content Include="Views\Razor\Index.cshtml" />
     <Content Include="Views\Razor\Table.cshtml" />
     <Content Include="Views\Razor\Videos.cshtml" />
+    <Content Include="Views\Mouse\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -301,6 +308,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704300421089_adddatabase.resx">
       <DependentUpon>201704300421089_adddatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705101609427_addMouse.resx">
+      <DependentUpon>201705101609427_addMouse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -17,6 +17,7 @@ namespace MvcTutorials.Data
         }
         public DbSet<Category> Categorys { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Mouse> Mouses { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

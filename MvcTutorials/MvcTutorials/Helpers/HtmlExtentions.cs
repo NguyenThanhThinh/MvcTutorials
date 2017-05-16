@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 
@@ -9,8 +10,7 @@ namespace MvcTutorials.Helpers
 {
     public static class HtmlExtentions
     {
-        public static MvcHtmlString Image(this HtmlHelper helper, string imageUrl, string alt = null, string width = "150px",
-            string height = "150px")
+        public static MvcHtmlString Image(this HtmlHelper helper, string imageUrl, string alt = null, string width = "150px", string height = "150px")
         {
             TagBuilder builder = new TagBuilder("img");
             builder.MergeAttribute("src", imageUrl);
@@ -76,6 +76,26 @@ namespace MvcTutorials.Helpers
             table.InnerHtml = tableInnerHtml.ToString();
 
             return new MvcHtmlString(table.ToString(TagRenderMode.Normal));
+        }
+
+        public static string GenerateSlug(string Name)
+        {
+            string phrase = string.Format("{0}", Name);
+
+            string str = RemoveAccent(phrase).ToLower();
+                  
+            str = Regex.Replace(str, @"[^a-z0-9\s-]", "");
+            
+            str = Regex.Replace(str, @"\s+", " ").Trim();
+        
+            str = str.Substring(0, str.Length <= 60 ? str.Length : 60).Trim();
+            str = Regex.Replace(str, @"\s", "-");  
+            return str;
+        }
+        private static string RemoveAccent(string value)
+        {
+            var bytes = Encoding.GetEncoding("Cyrillic").GetBytes(value);
+            return Encoding.ASCII.GetString(bytes);
         }
     }
 }
