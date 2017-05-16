@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
+
+using System.Data.Entity;
+
 
 namespace MvcTutorials.Helpers
 {
@@ -83,13 +87,13 @@ namespace MvcTutorials.Helpers
             string phrase = string.Format("{0}", Name);
 
             string str = RemoveAccent(phrase).ToLower();
-                  
+
             str = Regex.Replace(str, @"[^a-z0-9\s-]", "");
-            
+
             str = Regex.Replace(str, @"\s+", " ").Trim();
-        
+
             str = str.Substring(0, str.Length <= 60 ? str.Length : 60).Trim();
-            str = Regex.Replace(str, @"\s", "-");  
+            str = Regex.Replace(str, @"\s", "-");
             return str;
         }
         private static string RemoveAccent(string value)
@@ -97,5 +101,10 @@ namespace MvcTutorials.Helpers
             var bytes = Encoding.GetEncoding("Cyrillic").GetBytes(value);
             return Encoding.ASCII.GetString(bytes);
         }
+        public static IQueryable<T> Including<T>(this IQueryable<T> self, params Expression<Func<T, object>>[] includeProperties) where T : class
+        {
+            return includeProperties.Aggregate(self, (current, includeProperty) => current.Include(includeProperty));
+        }
+
     }
 }
