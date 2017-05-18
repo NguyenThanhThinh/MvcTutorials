@@ -20,7 +20,7 @@ namespace MvcTutorials.Repositories
             table = db.Set<T>();
         }
 
-        public IQueryable<T> All => table.AsQueryable();
+      
 
         public int Delete(Expression<Func<T, bool>> where)
         {
@@ -33,7 +33,7 @@ namespace MvcTutorials.Repositories
             return found.Count();
         }
 
-        public T Delete(TKey id) => table.Remove(Get(id));
+     
 
         public async Task<int> DeleteAsync(Expression<Func<T, bool>> where)
         {
@@ -45,7 +45,8 @@ namespace MvcTutorials.Repositories
 
             return await found.CountAsync();
         }
-
+        public IQueryable<T> All => table.AsQueryable();
+        public T Delete(TKey id) => table.Remove(Get(id));
         public async Task<T> DeleteAsync(TKey id) => table.Remove(await GetAsync(id));
 
         public T Get(TKey id) => table.Find(id);
