@@ -194,6 +194,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MouseController.cs" />
     <Compile Include="Controllers\RazorController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Data\Entities\Category.cs" />
     <Compile Include="Data\Entities\Employee.cs" />
     <Compile Include="Data\Entities\Human.cs" />
@@ -288,6 +289,7 @@
     <Content Include="Views\Razor\Table.cshtml" />
     <Content Include="Views\Razor\Videos.cshtml" />
     <Content Include="Views\Mouse\Index.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

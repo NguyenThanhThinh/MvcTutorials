@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    List<MvcTutorials.Data.Entities.Employee> list=Model;
+    var t = list.Count();
+
+}
+<h2>Test demo</h2>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+        
+        @for (var a = 0; a < t; a++)
+        {
+            <tr>
+                <td>@list[a].Id</td>
+                <td>@list[a].Name</td>
+            </tr>
+        }
+    </table>
+</div>
+
